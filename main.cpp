@@ -12,5 +12,6 @@ int main () {
     welcomeMessage();
     pilihTiket();
     listKota();
+    listMaskapai();
 }
 

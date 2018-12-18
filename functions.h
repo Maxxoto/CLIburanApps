@@ -22,15 +22,28 @@ int welcomeMessage(){
 
 	return 0;
 }
+int dataDiri(){
+
+	cout << "Nama Lengkap : " << endl;
+	cout << "No Telp/HP :" << endl;	
+}
 void pilihTiket(){
     
     cout << "Silahkan Pilih Kota Tujuan :" << endl ;
 
 }
+
 void listKota(){
     
-    string listKota[3] = {"1.Jakarta","2.Surabaya","3.Malang"};
-    for(int i=0; i < 3 ;i++ ){
+    string listKota[5] = {"1.Jakarta","2.Surabaya","3.Malang","4.Pekanbaru","5.Bali"};
+    for(int i=0; i < 4 ;i++ ){
         cout << listKota[i] << endl;
     }
+}
+
+int listMaskapai(){
+	string listMaskapai[10] = {"1.Garuda Indonesia","2.Air Asia","3.Citilink","4.Batik Air"} ;
+	for(int i=0; i < 3 ; i++){
+		cout << listMaskapai[i] << endl; 
+	}
 }
