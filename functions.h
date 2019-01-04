@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+char chrDestinasi[100];
 using namespace std;
 
 int welcomeMessage(){
@@ -35,38 +36,6 @@ int dataDiri(){
 	cout << "Email : "<<email<<endl;
 }
 
-void listKota(){
-
-    string listKota[5] = {"1.Jakarta","2.Surabaya","3.Malang","4.Pekanbaru","5.Bali"};
-    for(int i=0; i < 4 ;i++ ){
-        cout << listKota[i] << endl;
-    }
-}
-
-void pilihTiket(){
-  cout << "Silahkan Pilih Kota Tujuan :" << endl ;
-	listKota();
-	int pilih;
-	cin >> pilih;
-    switch (pilih){
-    case 1 :
-		cout << endl << "Kota yang dipilih : Jakarta " << endl ;
-		break; //masuk ke fungsi list maskapai
-    case 2 : 
-		cout << endl << "Kota yang dipilih : Surabaya " << endl;
-		break; //masuk ke fungsi list maskapai
-    case 3 :
-		cout << endl << "Kota yang dipilih : Malang " << endl;
-		break; //masuk ke fungsi list maskapai
-    case 4 : 
-		cout << endl << "Kota yang dipilih : Pekanbaru " << endl;
-		break; //masuk ke fungsi list maskapai
-    case 5 : 
-		cout << endl << "Kota yang dipilih : Bali " << endl;
-		break; //masuk ke fungsi list maskapai
-    }
-}
-
 void kotaAsal() {
 	char strkotaAsal[0];
 	bool repeat = true;
@@ -84,6 +53,45 @@ void kotaAsal() {
 }//Tutup while
 
 }
+
+void listKota(){
+
+    string listKota[5] = {"1.Jakarta","2.Surabaya","3.Malang","4.Pekanbaru","5.Bali"};
+    for(int i=0; i < 5 ;i++ ){
+        cout << listKota[i] << endl;
+    }
+}
+
+
+
+void pilihTiket(){
+//	chrDestinasi[] = '/0' ; //Menhilangkan nilai variabel
+  cout << "Silahkan Pilih Kota Tujuan :" << endl ;
+	listKota();
+	int pilih;
+	cin >> pilih;
+    switch (pilih){
+    case 1 :
+		cout << endl << "Kota yang dipilih : Jakarta " << endl ;
+		chrDestinasi[100] = 'Jakarta';
+		break; //masuk ke fungsi list maskapai
+    case 2 : 
+		cout << endl << "Kota yang dipilih : Surabaya " << endl;
+		chrDestinasi[100] = 'Surabaya';
+		break; //masuk ke fungsi list maskapai
+    case 3 :
+		cout << endl << "Kota yang dipilih : Malang " << endl;
+		break; //masuk ke fungsi list maskapai
+    case 4 : 
+		cout << endl << "Kota yang dipilih : Pekanbaru " << endl;
+		break; //masuk ke fungsi list maskapai
+    case 5 : 
+		cout << endl << "Kota yang dipilih : Bali " << endl;
+		break; //masuk ke fungsi list maskapai
+    }
+}
+
+
 
 int jumlahPenumpang(){
 	char penumpang[0];
@@ -107,19 +115,52 @@ int jumlahPenumpang(){
 
 }
 
-
-/* int listMaskapai(){
-	string listMaskapai[10] = {"1.Garuda Indonesia","2.Air Asia","3.Citilink","4.Batik Air"} ;
-	for(int i=0; i < 3 ; i++){
-		cout << listMaskapai[i] << endl;
+void listMaskapai(){
+	string maskapai [5] ={"Garuda","Batik Air","Air Asia","Citilink","Sriwijaya Air"}; 
+	for (int i=0; i < 5; i++ ){
+		cout << maskapai[i];
 	}
 }
-*/
 
-/* int harga(){
-    int hargagaruda=40000,hargaairasia=250000,hargacitilink=225000,hargabatik=200000;
-    if (hargagaruda<)
+void PilihMaskapai(){
+	int pilih;
+	listMaskapai();
+
+	switch(pilih){
+		case 1 : 
+ 			cout << endl << " Anda Memilih Garuda "<< endl;
+			break;
+		case 2 :
+			cout << endl << " Anda Memilih Batik Air"<<endl;
+			break;
+		case 3 :
+			cout << endl << " Anda Memiih Air Asia"<<endl;
+			break;
+		case 4 :
+			cout << endl << " Anda Memilih CitiLink"<<endl;
+			break;
+		case 5 :
+			cout << endl <<" Anda Memilih Sriwijaya Air"<<endl;
+			break;
+	}
+}		
+
+int Harga(){
+	int jakarta,surabaya,malang,pekanbaru,bali;
+	jakarta = 450000;
+	surabaya = 400000;
+	if(chrDestinasi[100] == 'Jakarta'){
+		cout << jakarta ;
+	}else if(chrDestinasi[100] == 'Surabaya'){
+		cout << surabaya;
+	}
+
+}
+		
+		
+	
 
 
-} */
+
+
 
