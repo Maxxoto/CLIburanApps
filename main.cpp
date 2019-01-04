@@ -11,7 +11,8 @@ using namespace std;
 int main () {
     welcomeMessage();
     pilihTiket();
-    listKota();
-    listMaskapai();
+    kotaAsal();
+    jumlahPenumpang();
+    //listMaskapai();
 }
 
