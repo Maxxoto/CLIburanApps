@@ -1,10 +1,19 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
-char chrDestinasi[100];
+
+
 using namespace std;
+
+string chrDestinasi[6] = {"","Jakarta","Surabaya","Malang","Pekanbaru","Bali"};
+int hMaskapai[6] = {0,1000000,800000,450000,475000,600000};
+int hKota[6] = {0,250000,100000,400000,300000,1500000};
+int pilihMas,pilihKota,intPenumpang;
+
 
 int welcomeMessage(){
     const char TB = '\xCD'; // 205
@@ -42,6 +51,11 @@ void kotaAsal() {
 	while(repeat == true){
 	cout << "Masukkan Kota Asal : " ;
 	cin >> strkotaAsal;
+	
+	//if(tolower(strkotaAsal) == pili){
+
+	//}
+
 	if(isdigit(strkotaAsal[0])){
 		system("cls");
 		cout << "Masukkan kota asal dengan benar !" << endl;
@@ -68,25 +82,33 @@ void pilihTiket(){
 //	chrDestinasi[] = '/0' ; //Menhilangkan nilai variabel
   cout << "Silahkan Pilih Kota Tujuan :" << endl ;
 	listKota();
-	int pilih;
-	cin >> pilih;
-    switch (pilih){
+	
+	cin >> pilihKota;
+    switch (pilihKota){
     case 1 :
 		cout << endl << "Kota yang dipilih : Jakarta " << endl ;
-		chrDestinasi[100] = 'Jakarta';
+		chrDestinasi[pilihKota];
+		hKota[pilihKota];
 		break; //masuk ke fungsi list maskapai
     case 2 : 
 		cout << endl << "Kota yang dipilih : Surabaya " << endl;
-		chrDestinasi[100] = 'Surabaya';
+		chrDestinasi[pilihKota];
+		hKota[pilihKota];
 		break; //masuk ke fungsi list maskapai
     case 3 :
 		cout << endl << "Kota yang dipilih : Malang " << endl;
+		chrDestinasi[pilihKota];
+		hKota[pilihKota];
 		break; //masuk ke fungsi list maskapai
     case 4 : 
 		cout << endl << "Kota yang dipilih : Pekanbaru " << endl;
+		chrDestinasi[pilihKota];
+		hKota[pilihKota];
 		break; //masuk ke fungsi list maskapai
     case 5 : 
 		cout << endl << "Kota yang dipilih : Bali " << endl;
+		chrDestinasi[pilihKota];
+		hKota[pilihKota];
 		break; //masuk ke fungsi list maskapai
     }
 }
@@ -95,7 +117,6 @@ void pilihTiket(){
 
 int jumlahPenumpang(){
 	char penumpang[0];
-	int intPenumpang;
 	bool repeat = true;
 	while( repeat == true) {
 	cout << "Masukkan Jumlah Penumpang : " ;
@@ -116,43 +137,65 @@ int jumlahPenumpang(){
 }
 
 void listMaskapai(){
-	string maskapai [5] ={"Garuda","Batik Air","Air Asia","Citilink","Sriwijaya Air"}; 
+	string maskapai [5] ={"1.Garuda","2.Batik Air","3.Air Asia","4.Citilink","5.Sriwijaya Air"}; 
 	for (int i=0; i < 5; i++ ){
-		cout << maskapai[i];
+		cout << maskapai[i] << endl;
 	}
+	
 }
 
 void PilihMaskapai(){
-	int pilih;
 	listMaskapai();
-
-	switch(pilih){
+	
+	
+	cout << "Masukkan Maskapai yang ingin anda pilih ?" << endl ;
+	cin >> pilihMas ;
+	switch(pilihMas){
 		case 1 : 
- 			cout << endl << " Anda Memilih Garuda "<< endl;
+ 			cout << endl << "Berikut Biaya Tiket Garuda "<< endl;
+			hMaskapai[pilihMas]; 
 			break;
 		case 2 :
-			cout << endl << " Anda Memilih Batik Air"<<endl;
+			cout << endl << "Berikut Biaya Tiket Batik Air"<<endl;
+			hMaskapai[pilihMas];
 			break;
 		case 3 :
-			cout << endl << " Anda Memiih Air Asia"<<endl;
+			cout << endl << "Berikut Biaya Tiket Air Asia"<<endl;
+			hMaskapai[pilihMas];
 			break;
 		case 4 :
-			cout << endl << " Anda Memilih CitiLink"<<endl;
+			cout << endl << "Berikut Biaya Tiket CitiLink"<<endl;
+			hMaskapai[pilihMas];
 			break;
 		case 5 :
-			cout << endl <<" Anda Memilih Sriwijaya Air"<<endl;
+			cout << endl << "Berikut Biaya Tiket Sriwijaya Air"<<endl;
+			hMaskapai[pilihMas];
 			break;
 	}
 }		
 
 int Harga(){
-	int jakarta,surabaya,malang,pekanbaru,bali;
-	jakarta = 450000;
-	surabaya = 400000;
-	if(chrDestinasi[100] == 'Jakarta'){
-		cout << jakarta ;
-	}else if(chrDestinasi[100] == 'Surabaya'){
-		cout << surabaya;
+	
+	if(chrDestinasi[pilihKota] == "Jakarta" ){
+		cout << "Harga tiket anda : Rp." ;
+		cout << (hKota[pilihKota] + hMaskapai[pilihMas]) * intPenumpang << endl; 
+		cout << "Total tiket anda : " << intPenumpang << " orang";  
+	}else if(chrDestinasi[pilihKota] == "Surabaya"){
+		cout << "Harga tiket anda : Rp." ;
+		cout << (hKota[pilihKota] + hMaskapai[pilihMas]) * intPenumpang << endl; 
+		cout << "Total tiket anda : " << intPenumpang << " orang";  
+	}else if(chrDestinasi[pilihKota] == "Malang"){
+		cout << "Harga tiket anda : Rp." ;
+		cout << (hKota[pilihKota] + hMaskapai[pilihMas]) * intPenumpang << endl; 
+		cout << "Total tiket anda : " << intPenumpang << " orang";  			
+	}else if(chrDestinasi[pilihKota] == "Pekanbaru"){
+		cout << "Harga tiket anda : Rp." ;
+		cout << (hKota[pilihKota] + hMaskapai[pilihMas]) * intPenumpang << endl; 
+		cout << "Total tiket anda : " << intPenumpang << " orang";  
+	}else if(chrDestinasi[pilihKota] == "Bali"){
+		cout << "Harga tiket anda : Rp." ;
+		cout << (hKota[pilihKota] + hMaskapai[pilihMas]) * intPenumpang << endl; 
+		cout << "Total tiket anda : " << intPenumpang << " orang"; 
 	}
 
 }

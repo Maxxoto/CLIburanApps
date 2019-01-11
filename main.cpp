@@ -13,7 +13,7 @@ int main () {
     pilihTiket();
     kotaAsal();
     jumlahPenumpang();
-    listMaskapai();
+    PilihMaskapai();
     Harga();
 }
 
