@@ -4,10 +4,16 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
+#include <fstream>
 
 
 
 using namespace std;
+char fileNama[50];
+//ofstream myfile;
+  //myfile.open ("example.txt");
+  //myfile << "Writing this to a file.\n";
+  //myfile.close();
 
 string chrDestinasi[6] = {"","Jakarta","Surabaya","Malang","Pekanbaru","Bali"};
 int hMaskapai[6] = {0,1000000,800000,450000,475000,600000};
@@ -35,14 +41,20 @@ int welcomeMessage(){
 	return 0;
 }
 int dataDiri(){
-    string nama,telp,email;
-   getline(cin,nama);
-   getline(cin,telp);
-   getline(cin,email);
+	
+    string telp,email;
+	cout << "Nama Lengkap : " ;
+   		cin.getline(fileNama,50);
+	cout << "No Telp : " ;	   
+   		getline(cin,telp);
+	cout << "Alamat Email : " ;	   
+   		getline(cin,email);
 
-	cout << "Nama Lengkap : " <<nama<< endl;
+	system("cls");
+
+	cout << "Nama Lengkap : " <<fileNama<< endl;
 	cout << "No Telp/HP :" << telp<<endl;
-	cout << "Email : "<<email<<endl;
+	cout << "Email : "<<email<<endl<<endl;
 }
 
 void kotaAsal() {

@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <string.h>
 #include "functions.h"
 
 using namespace std;
@@ -9,7 +10,9 @@ using namespace std;
 
 
 int main () {
+    
     welcomeMessage();
+    dataDiri();
     pilihTiket();
     kotaAsal();
     jumlahPenumpang();
