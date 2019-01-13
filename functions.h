@@ -10,6 +10,7 @@
 
 using namespace std;
 char fileNama[50];
+
 //ofstream myfile;
   //myfile.open ("example.txt");
   //myfile << "Writing this to a file.\n";
@@ -45,10 +46,22 @@ int dataDiri(){
     string telp,email;
 	cout << "Nama Lengkap : " ;
    		cin.getline(fileNama,50);
+		
 	cout << "No Telp : " ;	   
    		getline(cin,telp);
 	cout << "Alamat Email : " ;	   
    		getline(cin,email);
+
+	ofstream myfile;
+	myfile.open(fileNama);
+	myfile << "DATA TRANSAKSI TIKET \n" ;
+	myfile << "Nama Pelanggan :" ;
+	myfile << fileNama << endl ;
+	myfile << "No Telp :";
+	myfile << telp << endl ;
+	myfile << "Email :" ;
+	 
+	myfile.close();
 
 	system("cls");
 
