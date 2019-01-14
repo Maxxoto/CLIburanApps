@@ -10,7 +10,7 @@
 
 using namespace std;
 char fileNama[50];
-
+ofstream myfile;
 //ofstream myfile;
   //myfile.open ("example.txt");
   //myfile << "Writing this to a file.\n";
@@ -52,7 +52,7 @@ int dataDiri(){
 	cout << "Alamat Email : " ;	   
    		getline(cin,email);
 
-	ofstream myfile;
+	
 	myfile.open(fileNama);
 	myfile << "DATA TRANSAKSI TIKET \n" ;
 	myfile << "Nama Pelanggan :" ;
@@ -60,8 +60,8 @@ int dataDiri(){
 	myfile << "No Telp :";
 	myfile << telp << endl ;
 	myfile << "Email :" ;
-	 
-	myfile.close();
+	myfile << email; 
+	//myfile.close();
 
 	system("cls");
 
@@ -76,7 +76,8 @@ void kotaAsal() {
 	while(repeat == true){
 	cout << "Masukkan Kota Asal : " ;
 	cin >> strkotaAsal;
-	
+	//myfile.open(fileNama);
+	myfile << strkotaAsal;
 	//if(tolower(strkotaAsal) == pili){
 
 	//}
